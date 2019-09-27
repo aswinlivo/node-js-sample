@@ -16,16 +16,7 @@ node() {
       stage('publish') {
         app.push(commit_id)
       }
-pipeline {
-    agent any
-    stages {
-        stage('build') {
-            steps {
-                sh 'npm --version'
-            }
-        }
-    }
-  }
+
 
   stage('deploy') {
     env.TAG = "${commit_id}"
