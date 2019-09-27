@@ -1,5 +1,5 @@
 node() {
-  def app
+   def app
   def commit_id
 
   stage('initialize') {
@@ -16,7 +16,8 @@ node() {
       stage('publish') {
         app.push(commit_id)
       }
-
+    }
+  }
 
   stage('deploy') {
     env.TAG = "${commit_id}"
